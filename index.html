@@ -99,7 +99,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 6rem 2rem 2rem;
+            padding: 8rem 2rem 1rem;
             background: #0a0a0a;
             position: relative;
             overflow: hidden;
@@ -429,6 +429,109 @@
         .skill-name {
             font-weight: 600;
             color: var(--text-primary);
+        }
+
+        /* Project Modal */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .project-modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 24px;
+            max-width: 900px;
+            border: 2px solid rgba(206, 184, 136, 0.4);
+            position: relative;
+        }
+
+        .project-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-modal-title {
+            font-size: 2rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .project-modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .project-modal-close:hover {
+            color: var(--primary-color);
+        }
+
+        .project-modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-modal-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-modal-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .project-modal-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-modal-detail-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-modal-detail-item p {
+            color: var(--text-secondary);
+        }
+
+        .project-modal-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-modal-tech-stack .tag {
+            background: var(--bg-primary);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
         }
 
         /* Experience Section */
@@ -763,7 +866,7 @@
             }
 
             .hero {
-                padding: 4rem 1rem 2rem;
+                padding: 8rem 1rem 1rem;
             }
 
             .hero-container {
@@ -978,7 +1081,7 @@
                     <img src="https://www.dropbox.com/scl/fi/v3wcb6dbnolvvvnswvj82/Profiel.jpg?rlkey=g1smjz9s5f1uokieqkxamk8ak&st=x5a164wz&raw=1" alt="Profile Photo" class="profile-img">
                     <div class="profile-info">
                         <h3>Changyeol Im</h3>
-                        <p class="title">Data Scientist</p>
+                        <p class="title">Data Science Undergraduate</p>
                         <div class="social-links">
                             <a href="#" title="GitHub">
                                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -1008,7 +1111,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <div class="project-card" onclick="openProjectModal('project1')">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+1" alt="Project 1">
                         </div>
@@ -1022,7 +1125,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" onclick="openProjectModal('project2')">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+2" alt="Project 2">
                         </div>
@@ -1036,7 +1139,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" onclick="openProjectModal('project3')">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+3" alt="Project 3">
                         </div>
@@ -1050,7 +1153,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" onclick="openProjectModal('project4')">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+4" alt="Project 4">
                         </div>
@@ -1068,6 +1171,28 @@
             </div>
         </div>
     </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="project-modal-content">
+            <div class="project-modal-header">
+                <h2 class="project-modal-title" id="modalTitle">Project Title</h2>
+                <button class="project-modal-close" onclick="closeProjectModal()">&times;</button>
+            </div>
+            <div class="project-modal-gallery" id="modalGallery">
+                <!-- Gallery images will be inserted here -->
+            </div>
+            <div class="project-modal-description" id="modalDescription">
+                <!-- Description will be inserted here -->
+            </div>
+            <div class="project-modal-details" id="modalDetails">
+                <!-- Details will be inserted here -->
+            </div>
+            <div class="project-modal-tech-stack" id="modalTechStack">
+                <!-- Tech stack will be inserted here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Resume Section -->
     <section id="resume" class="resume">
@@ -1197,6 +1322,136 @@
 
         // Removed parallax effect to prevent hero section from covering content
         // Resume functionality now uses direct links to PDF file
+
+        // Project Modal Data
+        const projectData = {
+            project1: {
+                title: "Machine Learning Project",
+                description: "Developed advanced predictive models for business analytics using cutting-edge machine learning algorithms. This project involved data preprocessing, feature engineering, model selection, and deployment of production-ready ML systems.",
+                gallery: [
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=ML+Architecture",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Data+Visualization",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Model+Results"
+                ],
+                details: [
+                    { title: "Duration", content: "3 months" },
+                    { title: "Team Size", content: "4 members" },
+                    { title: "Role", content: "Lead ML Engineer" },
+                    { title: "Impact", content: "95% accuracy achieved" }
+                ],
+                techStack: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Docker"]
+            },
+            project2: {
+                title: "Data Visualization Dashboard",
+                description: "Created interactive, real-time data monitoring dashboards for business intelligence. Implemented responsive design with dynamic data updates and comprehensive analytics features.",
+                gallery: [
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Dashboard+Overview",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Real-time+Charts",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Mobile+View"
+                ],
+                details: [
+                    { title: "Duration", content: "2 months" },
+                    { title: "Team Size", content: "3 members" },
+                    { title: "Role", content: "Frontend Developer" },
+                    { title: "Users", content: "500+ daily active users" }
+                ],
+                techStack: ["React", "D3.js", "JavaScript", "SQL", "Node.js", "MongoDB", "WebSocket"]
+            },
+            project3: {
+                title: "Statistical Analysis Research",
+                description: "Conducted comprehensive statistical analysis for academic research publication. Applied advanced statistical methods to analyze complex datasets and derive meaningful insights.",
+                gallery: [
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Research+Methodology",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Statistical+Models",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Research+Paper"
+                ],
+                details: [
+                    { title: "Duration", content: "6 months" },
+                    { title: "Team Size", content: "2 researchers" },
+                    { title: "Role", content: "Data Analyst" },
+                    { title: "Publication", content: "Published in peer-reviewed journal" }
+                ],
+                techStack: ["R", "Python", "SPSS", "Excel", "LaTeX", "Git", "Tableau"]
+            },
+            project4: {
+                title: "Cloud Data Pipeline",
+                description: "Built scalable, fault-tolerant data processing pipeline using cloud technologies. Implemented ETL processes, data quality monitoring, and automated data workflows.",
+                gallery: [
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Pipeline+Architecture",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Cloud+Infrastructure",
+                    "https://via.placeholder.com/400x300/CEB888/000000?text=Monitoring+Dashboard"
+                ],
+                details: [
+                    { title: "Duration", content: "4 months" },
+                    { title: "Team Size", content: "5 members" },
+                    { title: "Role", content: "Data Engineer" },
+                    { title: "Scale", content: "Processing 10TB+ data daily" }
+                ],
+                techStack: ["AWS", "Python", "Apache Spark", "Kafka", "Docker", "Kubernetes", "Terraform"]
+            }
+        };
+
+        // Project Modal Functions
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalGallery = document.getElementById('modalGallery');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalDetails = document.getElementById('modalDetails');
+            const modalTechStack = document.getElementById('modalTechStack');
+
+            // Set title
+            modalTitle.textContent = project.title;
+
+            // Set gallery
+            modalGallery.innerHTML = project.gallery.map(img => 
+                `<img src="${img}" alt="${project.title}">`
+            ).join('');
+
+            // Set description
+            modalDescription.textContent = project.description;
+
+            // Set details
+            modalDetails.innerHTML = project.details.map(detail => 
+                `<div class="project-modal-detail-item">
+                    <h4>${detail.title}</h4>
+                    <p>${detail.content}</p>
+                </div>`
+            ).join('');
+
+            // Set tech stack
+            modalTechStack.innerHTML = project.techStack.map(tech => 
+                `<span class="tag">${tech}</span>`
+            ).join('');
+
+            // Show modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('projectModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                closeProjectModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeProjectModal();
+            }
+        }
     </script>
 </body>
 </html>
