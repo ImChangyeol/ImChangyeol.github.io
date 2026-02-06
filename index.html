@@ -800,6 +800,297 @@
             }
         }
 
+        /* Project Detail Section - Completely Rebuilt CSS */
+        .project-detail-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            z-index: 9999;
+            overflow-y: auto;
+            padding: 0;
+        }
+
+        .project-detail-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        /* Navigation Header */
+        .project-detail-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(206, 184, 136, 0.2);
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(206, 184, 136, 0.1);
+            color: var(--primary-color);
+            border: 1px solid rgba(206, 184, 136, 0.3);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .back-btn:hover {
+            background: rgba(206, 184, 136, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .project-detail-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-1);
+            color: #000000;
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(206, 184, 136, 0.3);
+        }
+
+        /* Project Header */
+        .project-detail-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .project-meta-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: rgba(206, 184, 136, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(206, 184, 136, 0.3);
+        }
+
+        /* Project Content Layout */
+        .project-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 3rem;
+        }
+
+        .project-main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(206, 184, 136, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-description {
+            color: #e0e0e0;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin: 0;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .project-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(206, 184, 136, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .project-gallery img:hover {
+            transform: scale(1.02);
+            border-color: var(--primary-color);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .feature-list,
+        .achievement-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li,
+        .achievement-list li {
+            color: #e0e0e0;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(206, 184, 136, 0.1);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li::before,
+        .achievement-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        .project-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .sidebar-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(206, 184, 136, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .sidebar-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .info-label {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .info-value {
+            color: #e0e0e0;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: var(--gradient-1);
+            color: #000000;
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            display: inline-block;
+            max-width: fit-content;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .project-detail-wrapper {
+                padding: 1rem;
+            }
+
+            .project-detail-nav {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: stretch;
+            }
+
+            .project-detail-actions {
+                justify-content: center;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-detail-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 2rem;
@@ -1165,9 +1456,9 @@
             <div class="about-content">
                 <div class="projects-grid">
                     <div class="project-card">
-                        <a href="project1.html" class="project-link">
+                        <a href="#project1" class="project-link" onclick="showProjectDetail('project1'); return false;">
                             <div class="project-image">
-                                <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+1" alt="Project 1">
+                                <img src="https://www.dropbox.com/scl/fi/xol9ce784j66wwwdf99wr/ZB-Photo-1.JPG?rlkey=u0qqz12ptb497d7lm28lkw7u0&st=tqlpcosx&raw=1" alt="Project 1">
                             </div>
                             <div class="project-content">
                                 <h3>Machine Learning Project</h3>
@@ -1181,7 +1472,7 @@
                         </a>
                     </div>
                     <div class="project-card">
-                        <a href="project2.html" class="project-link">
+                        <a href="#project2" class="project-link" onclick="showProjectDetail('project2'); return false;">
                             <div class="project-image">
                                 <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+2" alt="Project 2">
                             </div>
@@ -1197,7 +1488,7 @@
                         </a>
                     </div>
                     <div class="project-card">
-                        <a href="project3.html" class="project-link">
+                        <a href="#project3" class="project-link" onclick="showProjectDetail('project3'); return false;">
                             <div class="project-image">
                                 <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+3" alt="Project 3">
                             </div>
@@ -1213,7 +1504,7 @@
                         </a>
                     </div>
                     <div class="project-card">
-                        <a href="project4.html" class="project-link">
+                        <a href="#project4" class="project-link" onclick="showProjectDetail('project4'); return false;">
                             <div class="project-image">
                                 <img src="https://via.placeholder.com/400x300/2563eb/ffffff?text=Project+4" alt="Project 4">
                             </div>
@@ -1227,6 +1518,105 @@
                                 </div>
                             </div>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Section - Completely Rebuilt -->
+    <section id="project-detail" class="project-detail-section" style="display: none;">
+        <div class="project-detail-wrapper">
+            <!-- Navigation Header -->
+            <div class="project-detail-nav">
+                <button class="back-btn" onclick="hideProjectDetail()">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                    Back to Projects
+                </button>
+                <div class="project-detail-actions">
+                    <button class="action-btn" onclick="viewLiveDemo()">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                        Live Demo
+                    </button>
+                    <button class="action-btn" onclick="viewSourceCode()">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L13 6l6 6-6 6-1.4-1.4z"/>
+                        </svg>
+                        Source Code
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Header -->
+            <div class="project-detail-header">
+                <div class="project-title-section">
+                    <h1 id="project-detail-title" class="project-title"></h1>
+                    <div class="project-meta-badges">
+                        <span class="meta-badge" id="project-duration"></span>
+                        <span class="meta-badge" id="project-role"></span>
+                        <span class="meta-badge" id="project-impact"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Content -->
+            <div class="project-detail-content">
+                <!-- Main Content Area -->
+                <div class="project-main-content">
+                    <!-- Overview Section -->
+                    <div class="content-section">
+                        <h2 class="section-title">Project Overview</h2>
+                        <p id="project-detail-description" class="project-description"></p>
+                    </div>
+
+                    <!-- Gallery Section -->
+                    <div class="content-section">
+                        <h2 class="section-title">Project Gallery</h2>
+                        <div id="project-gallery" class="project-gallery"></div>
+                    </div>
+
+                    <!-- Features & Achievements -->
+                    <div class="content-grid">
+                        <div class="content-section">
+                            <h2 class="section-title">Key Features</h2>
+                            <ul id="project-features" class="feature-list"></ul>
+                        </div>
+                        <div class="content-section">
+                            <h2 class="section-title">Achievements</h2>
+                            <ul id="project-achievements" class="achievement-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="project-sidebar">
+                    <!-- Project Info -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Project Information</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="info-label">Duration</span>
+                                <span class="info-value" id="info-duration"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Team Size</span>
+                                <span class="info-value" id="info-team"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">My Role</span>
+                                <span class="info-value" id="info-role"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technology Stack -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Technology Stack</h3>
+                        <div id="tech-stack" class="tech-stack"></div>
                     </div>
                 </div>
             </div>
@@ -1542,135 +1932,226 @@
         // Removed parallax effect to prevent hero section from covering content
         // Resume functionality now uses direct links to PDF file
 
-        // Project Modal Data
+        // Project Detail Data - Enhanced
         const projectData = {
             project1: {
                 title: "Machine Learning Project",
-                description: "Developed advanced predictive models for business analytics using cutting-edge machine learning algorithms. This project involved data preprocessing, feature engineering, model selection, and deployment of production-ready ML systems.",
+                description: "Developed advanced predictive models for business analytics using cutting-edge machine learning algorithms. This comprehensive project involved the entire ML pipeline from data preprocessing and feature engineering to model selection, training, and deployment of production-ready ML systems.",
+                duration: "3 months",
+                role: "Lead ML Engineer",
+                impact: "95% accuracy achieved",
+                teamSize: "4 members",
                 gallery: [
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=ML+Architecture",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Data+Visualization",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Model+Results"
+                    "https://www.dropbox.com/scl/fi/xol9ce784j66wwwdf99wr/ZB-Photo-1.JPG?rlkey=u0qqz12ptb497d7lm28lkw7u0&st=tqlpcosx&raw=1",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Data+Visualization",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Model+Results"
                 ],
-                details: [
-                    { title: "Duration", content: "3 months" },
-                    { title: "Team Size", content: "4 members" },
-                    { title: "Role", content: "Lead ML Engineer" },
-                    { title: "Impact", content: "95% accuracy achieved" }
+                features: [
+                    "Advanced data preprocessing and feature engineering",
+                    "Multiple ML algorithms comparison and optimization",
+                    "Real-time prediction API deployment",
+                    "Automated model retraining pipeline"
                 ],
-                techStack: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Docker"]
+                achievements: [
+                    "Achieved 95% prediction accuracy",
+                    "Reduced processing time by 60%",
+                    "Deployed to production serving 10K+ requests/day",
+                    "Received outstanding performance award"
+                ],
+                techStack: ["Python", "TensorFlow", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "Docker", "Flask", "AWS"]
             },
             project2: {
                 title: "Data Visualization Dashboard",
                 description: "Created interactive, real-time data monitoring dashboards for business intelligence. Implemented responsive design with dynamic data updates and comprehensive analytics features.",
+                duration: "2 months",
+                role: "Frontend Developer",
+                impact: "500+ daily active users",
+                teamSize: "3 members",
                 gallery: [
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Dashboard+Overview",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Real-time+Charts",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Mobile+View"
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Dashboard+Overview",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Real-time+Charts",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Mobile+View"
                 ],
-                details: [
-                    { title: "Duration", content: "2 months" },
-                    { title: "Team Size", content: "3 members" },
-                    { title: "Role", content: "Frontend Developer" },
-                    { title: "Users", content: "500+ daily active users" }
+                features: [
+                    "Real-time data streaming and visualization",
+                    "Interactive charts and graphs",
+                    "Mobile-responsive design",
+                    "Custom analytics and reporting"
                 ],
-                techStack: ["React", "D3.js", "JavaScript", "SQL", "Node.js", "MongoDB", "WebSocket"]
+                achievements: [
+                    "500+ daily active users",
+                    "99.9% uptime achieved",
+                    "Reduced data analysis time by 40%",
+                    "Adopted by 3 departments"
+                ],
+                techStack: ["React", "D3.js", "JavaScript", "SQL", "Node.js", "MongoDB", "WebSocket", "Chart.js"]
             },
             project3: {
                 title: "Statistical Analysis Research",
                 description: "Conducted comprehensive statistical analysis for academic research publication. Applied advanced statistical methods to analyze complex datasets and derive meaningful insights.",
+                duration: "6 months",
+                role: "Data Analyst",
+                impact: "Published in peer-reviewed journal",
+                teamSize: "2 researchers",
                 gallery: [
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Research+Methodology",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Statistical+Models",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Research+Paper"
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Research+Methodology",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Statistical+Models",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Research+Paper"
                 ],
-                details: [
-                    { title: "Duration", content: "6 months" },
-                    { title: "Team Size", content: "2 researchers" },
-                    { title: "Role", content: "Data Analyst" },
-                    { title: "Publication", content: "Published in peer-reviewed journal" }
+                features: [
+                    "Advanced statistical modeling",
+                    "Hypothesis testing and validation",
+                    "Data visualization for research",
+                    "Comprehensive documentation"
                 ],
-                techStack: ["R", "Python", "SPSS", "Excel", "LaTeX", "Git", "Tableau"]
+                achievements: [
+                    "Published in peer-reviewed journal",
+                    "Cited 15+ times by other researchers",
+                    "Presented at international conference",
+                    "Received research excellence award"
+                ],
+                techStack: ["R", "Python", "SPSS", "Excel", "LaTeX", "Git", "Tableau", "MATLAB"]
             },
             project4: {
                 title: "Cloud Data Pipeline",
                 description: "Built scalable, fault-tolerant data processing pipeline using cloud technologies. Implemented ETL processes, data quality monitoring, and automated data workflows.",
+                duration: "4 months",
+                role: "Data Engineer",
+                impact: "Processing 10TB+ data daily",
+                teamSize: "5 members",
                 gallery: [
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Pipeline+Architecture",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Cloud+Infrastructure",
-                    "https://via.placeholder.com/400x300/CEB888/000000?text=Monitoring+Dashboard"
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Pipeline+Architecture",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Cloud+Infrastructure",
+                    "https://via.placeholder.com/600x400/CEB888/000000?text=Monitoring+Dashboard"
                 ],
-                details: [
-                    { title: "Duration", content: "4 months" },
-                    { title: "Team Size", content: "5 members" },
-                    { title: "Role", content: "Data Engineer" },
-                    { title: "Scale", content: "Processing 10TB+ data daily" }
+                features: [
+                    "Scalable ETL pipeline architecture",
+                    "Real-time data quality monitoring",
+                    "Automated error handling and recovery",
+                    "Cloud-native infrastructure"
                 ],
-                techStack: ["AWS", "Python", "Apache Spark", "Kafka", "Docker", "Kubernetes", "Terraform"]
+                achievements: [
+                    "Processing 10TB+ data daily",
+                    "99.99% data accuracy achieved",
+                    "Reduced processing costs by 35%",
+                    "Scaled to handle 100M+ records"
+                ],
+                techStack: ["AWS", "Python", "Apache Spark", "Kafka", "Docker", "Kubernetes", "Terraform", "Airflow"]
             }
         };
 
-        // Project Modal Functions
-        function openProjectModal(projectId) {
+        // Show project detail - Completely Rebuilt
+        function showProjectDetail(projectId) {
             const project = projectData[projectId];
             if (!project) return;
 
-            const modal = document.getElementById('projectModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalGallery = document.getElementById('modalGallery');
-            const modalDescription = document.getElementById('modalDescription');
-            const modalDetails = document.getElementById('modalDetails');
-            const modalTechStack = document.getElementById('modalTechStack');
+            // Hide all main sections
+            const homeElement = document.getElementById('home');
+            const aboutElement = document.getElementById('about');
+            const resumeElement = document.getElementById('resume');
+            const contactElement = document.getElementById('contact');
+            const footerElement = document.getElementById('footer');
+            
+            if (homeElement) homeElement.style.display = 'none';
+            if (aboutElement) aboutElement.style.display = 'none';
+            if (resumeElement) resumeElement.style.display = 'none';
+            if (contactElement) contactElement.style.display = 'none';
+            if (footerElement) footerElement.style.display = 'none';
+            
+            // Hide navigation
+            const nav = document.querySelector('nav');
+            if (nav) nav.style.display = 'none';
 
-            // Set title
-            modalTitle.textContent = project.title;
+            // Show project detail
+            const projectDetailSection = document.getElementById('project-detail');
+            if (projectDetailSection) projectDetailSection.style.display = 'block';
 
-            // Set gallery
-            modalGallery.innerHTML = project.gallery.map(img => 
-                `<img src="${img}" alt="${project.title}">`
-            ).join('');
+            // Populate project detail
+            document.getElementById('project-detail-title').textContent = project.title;
+            document.getElementById('project-detail-description').textContent = project.description;
+            
+            // Populate badges
+            document.getElementById('project-duration').textContent = project.duration;
+            document.getElementById('project-role').textContent = project.role;
+            document.getElementById('project-impact').textContent = project.impact;
 
-            // Set description
-            modalDescription.textContent = project.description;
-
-            // Set details
-            modalDetails.innerHTML = project.details.map(detail => 
-                `<div class="project-modal-detail-item">
-                    <h4>${detail.title}</h4>
-                    <p>${detail.content}</p>
-                </div>`
-            ).join('');
-
-            // Set tech stack
-            modalTechStack.innerHTML = project.techStack.map(tech => 
-                `<span class="tag">${tech}</span>`
-            ).join('');
-
-            // Show modal
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjectModal() {
-            const modal = document.getElementById('projectModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target === modal) {
-                closeProjectModal();
+            // Populate gallery
+            const galleryElement = document.getElementById('project-gallery');
+            if (galleryElement) {
+                galleryElement.innerHTML = project.gallery.map(img => 
+                    `<img src="${img}" alt="${project.title}">`
+                ).join('');
             }
+
+            // Populate features
+            const featuresElement = document.getElementById('project-features');
+            if (featuresElement) {
+                featuresElement.innerHTML = project.features.map(feature => 
+                    `<li>${feature}</li>`
+                ).join('');
+            }
+
+            // Populate achievements
+            const achievementsElement = document.getElementById('project-achievements');
+            if (achievementsElement) {
+                achievementsElement.innerHTML = project.achievements.map(achievement => 
+                    `<li>${achievement}</li>`
+                ).join('');
+            }
+
+            // Populate info grid
+            document.getElementById('info-duration').textContent = project.duration;
+            document.getElementById('info-team').textContent = project.teamSize;
+            document.getElementById('info-role').textContent = project.role;
+
+            // Populate tech stack
+            const techElement = document.getElementById('tech-stack');
+            if (techElement) {
+                techElement.innerHTML = project.techStack.map(tech => 
+                    `<span class="tech-tag">${tech}</span>`
+                ).join('');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeProjectModal();
-            }
-        });
+        // Hide project detail - Completely Rebuilt
+        function hideProjectDetail() {
+            // Show all main sections
+            const homeElement = document.getElementById('home');
+            const aboutElement = document.getElementById('about');
+            const resumeElement = document.getElementById('resume');
+            const contactElement = document.getElementById('contact');
+            const footerElement = document.getElementById('footer');
+            
+            if (homeElement) homeElement.style.display = 'block';
+            if (aboutElement) aboutElement.style.display = 'block';
+            if (resumeElement) resumeElement.style.display = 'block';
+            if (contactElement) contactElement.style.display = 'block';
+            if (footerElement) footerElement.style.display = 'block';
+            
+            // Show navigation
+            const nav = document.querySelector('nav');
+            if (nav) nav.style.display = 'block';
+
+            // Hide project detail
+            const projectDetailSection = document.getElementById('project-detail');
+            if (projectDetailSection) projectDetailSection.style.display = 'none';
+            
+            // Scroll to about section
+            const aboutSection = document.getElementById('about');
+            if (aboutSection) aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Additional functions for project links
+        function viewLiveDemo() {
+            alert('Live demo would open here');
+        }
+
+        function viewSourceCode() {
+            alert('Source code would open here');
+        }
     </script>
 </body>
 </html>
